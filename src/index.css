@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #0A0A0B;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 shadow-glass;
+  }
+  
+  .glass-dark {
+    @apply bg-black/40 backdrop-blur-xl border border-white/5 shadow-glass;
+  }
+
+  .neon-border-cyan {
+    @apply border border-primary/50 shadow-neon-cyan;
+  }
+
+  .neon-border-purple {
+    @apply border border-secondary/50 shadow-neon-purple;
+  }
+
+  .neon-text-cyan {
+    @apply text-primary drop-shadow-[0_0_8px_rgba(0,245,255,0.8)];
+  }
+
+  .neon-text-purple {
+    @apply text-secondary drop-shadow-[0_0_8px_rgba(189,0,255,0.8)];
+  }
+
+  .nav-link {
+    @apply flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 text-white/60 hover:text-white hover:bg-white/5;
+  }
+
+  .nav-link-active {
+    @apply flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 text-primary bg-primary/10 border border-primary/20;
+  }
+}
+
+/* Hide scrollbar for all browsers */
+*::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Recharts customization */
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: rgba(255, 255, 255, 0.05);
+}
+
+.recharts-curve-path {
+  filter: drop-shadow(0 0 8px rgba(0, 245, 255, 0.4));
+}
